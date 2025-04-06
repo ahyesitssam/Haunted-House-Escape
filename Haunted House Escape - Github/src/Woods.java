@@ -14,6 +14,9 @@ public class Woods extends Outside {
 	"The scent of dirt and mist clouds your brain as you place your hands out in front of you.\nStruggling to get up, " + 
 	"you open your eyes to find that it's nighttime, and you're surrounded by nothing but a vast, thick forest.";
    
+    /**
+     *
+     */
     public void enter() {
         System.out.println(description);
         keyPress();
