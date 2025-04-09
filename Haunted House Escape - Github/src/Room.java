@@ -23,11 +23,14 @@ public abstract class Room {
         scanner.nextLine();
     }
 
-    // Use to get the players menu choice
+    /**
+     * Handles the user input, including input validation. Returns 0 if the choice is invalid.
+     * @param paramNum the number of options the user is given
+     * @return the users choices
+     */
     public int numberChoice(int paramNum) {
         int number;
         if (scanner.hasNextInt()) {
-            
             number = scanner.nextInt();
             if (number > paramNum) {
                 scanner.nextLine(); // clear non integer input
@@ -44,8 +47,7 @@ public abstract class Room {
         }
     }
 
-    public int enter() 
-    {
+    public int enter() {
     	if (!beenHereBefore) {
 			System.out.println(description);
 			beenHereBefore = true;
