@@ -26,7 +26,6 @@ public class Main {
         	case 1:
         		System.out.println("You go to the room on the left.");
         		livingRoom.enter();
-        		leave();
         		userChoice = foyer.enter();
         		break;
         	case 2:

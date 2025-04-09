@@ -3,9 +3,7 @@ public class DiningRoom {
 
     public DiningRoom(){
         this.description="*You enter the dining room*\nSpiderwebs cover the chairs and drawers are" + 
-        "loaded silverware and fine China sets.";
-        
-        return();
+        "loaded silverware and fine China sets.";  
     }
 
     public void enter(){
