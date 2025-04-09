@@ -29,7 +29,7 @@ public class Foyer extends Room {
 		return choice;
 	}
 	
-	
+	// This is a test
 	
 	// Unused but needed via Room requirements
 	@Override
