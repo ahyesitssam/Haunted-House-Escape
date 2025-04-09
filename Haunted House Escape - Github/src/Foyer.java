@@ -24,7 +24,7 @@ public class Foyer extends Room {
 			System.out.println("3. Down the hall in front of you");
 			System.out.println("4. Upstairs");
 			System.out.print("Choose a number: ");
-			choice = numberChoice();
+			choice = numberChoice(4);
 		}	
 		return choice;
 	}

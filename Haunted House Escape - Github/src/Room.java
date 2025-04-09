@@ -24,10 +24,16 @@ public abstract class Room {
     }
 
     // Use to get the players menu choice
-    public int numberChoice() {
+    public int numberChoice(int paramNum) {
         int number;
         if (scanner.hasNextInt()) {
+            
             number = scanner.nextInt();
+            if (number > paramNum) {
+                scanner.nextLine(); // clear non integer input
+                System.out.println("Error: Invalid Choice");
+                return 0;
+            }
             scanner.nextLine();
             System.out.println();
             return number;
