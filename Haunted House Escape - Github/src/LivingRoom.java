@@ -11,7 +11,7 @@ public class LivingRoom extends Room {
  
     public LivingRoom(){
         this.description = "Looking aroud, this room appers to be a living room.\nThere's an arid coldness that fills the room, "  + 
-    "and dust covers the sofas and surrounding furniture.";
+        "and dust covers the sofas and surrounding furniture.";
     }
 
 	@Override

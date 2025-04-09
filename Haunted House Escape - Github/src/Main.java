@@ -21,23 +21,32 @@ public class Main {
         woods.enter();
         userChoice = foyer.enter();
       
-   
-        switch (userChoice) {
-    	case 1:
-    		System.out.println("You go to the room on the left.");
-    		livingRoom.enter();
-    		break;
-    	case 2:
-    		System.out.println("You go to the room on the right.");
-    		//masterBedroom.enter();
-    		break;
-    	case 3:
-    		System.out.println("You go down the hall.");
-    		//diningRoom.enter();
-    		break;
-    	case 4:
-    		System.out.println("You head upstairs.");
-    		break;
+        while (true) {
+        	switch (userChoice) {
+        	case 1:
+        		System.out.println("You go to the room on the left.");
+        		livingRoom.enter();
+        		leave();
+        		userChoice = foyer.enter();
+        		break;
+        	case 2:
+        		System.out.println("You go to the room on the right.");
+        		//masterBedroom.enter();
+        		break;
+        	case 3:
+        		System.out.println("You go down the hall.");
+        		//diningRoom.enter();
+        		break;
+        	case 4:
+        		System.out.println("You head upstairs.");
+        		break;
+            }
         }
+        
+    }
+    
+    // temporary method that makes the player leave and return to the previous room
+    public void leave() {
+    	System.out.print("You return to the previous room");
     }
 }
