@@ -32,7 +32,8 @@ public class Foyer extends Room {
 	
 	// Unused but needed via Room requirements
 	@Override
-	public void interactionChoice() {
+	public int interactionChoice() {
+		return 0;
 	}		
 }
 

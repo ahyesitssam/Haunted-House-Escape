@@ -63,5 +63,5 @@ public abstract class Room {
     
     
     // some rooms may have interactionChoice
-    public abstract void interactionChoice();
+    public abstract int interactionChoice();
 }
