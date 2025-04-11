@@ -21,9 +21,18 @@ public class LivingRoom extends Room {
 	}
 
 	@Override
-	public void interactionChoice() {
-		// TODO Auto-generated method stub
-		
+	public int interactionChoice() {
+		int choice = 0;
+		while (choice <= 0 || choice > 4) {
+			System.out.println("-> What will you do?");
+			System.out.println("1. Room to the Left");
+			System.out.println("2. Room to the Right");
+			System.out.println("3. Down the hall in front of you");
+			System.out.println("4. Upstairs");
+			System.out.print("Choose a number: ");
+			choice = numberChoice(4);
+		}	
+		return choice;
 	}
 }
 

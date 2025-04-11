@@ -17,7 +17,9 @@ public abstract class Room {
     	this.beenHereBefore = false;
     }
 
-    // Use to add a pause between dialogue
+    /**
+     * When called, adds a pause and waits for user input to continue.
+     */
     public void keyPress() {
         System.out.println("[Press 'Enter' to continue...]");
         scanner.nextLine();
@@ -61,8 +63,5 @@ public abstract class Room {
     
     
     // some rooms may have interactionChoice
-    /**
-     * 
-     */
     public abstract void interactionChoice();
 }

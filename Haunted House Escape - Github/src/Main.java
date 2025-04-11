@@ -26,7 +26,7 @@ public class Main {
         	case 1:
         		System.out.println("You go to the room on the left.");
         		livingRoom.enter();
-        		userChoice = foyer.enter();
+        		livingRoom.interactionChoice();
         		break;
         	case 2:
         		System.out.println("You go to the room on the right.");
@@ -42,10 +42,5 @@ public class Main {
             }
         }
         
-    }
-    
-    // temporary method that makes the player leave and return to the previous room
-    public void leave() {
-    	System.out.print("You return to the previous room");
     }
 }
