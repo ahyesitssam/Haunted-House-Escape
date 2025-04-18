@@ -36,7 +36,7 @@ public class LivingRoom extends Room {
 
 		System.out.print("*You're standing in front of the bookshelf, piled with books that look like" 
 		+ "they date back many centuries.*\nMaybe I can look through some of the books?");
-		while (exit = false) {
+		while (!exit) {
 			System.out.println("-> What book will you view?");
 			System.out.println("1. Book 1");
 			System.out.println("2. Book 2");
@@ -63,7 +63,7 @@ public class LivingRoom extends Room {
             	case 4:
                 	System.out.println("Lifting the fourth book, you notice a slight increase in heaviness. Intrigued, you open" +
 					" its contents to reveal a hidden compartment. Laying inside is a wooden block with a message carved into the" +
-					" surface, reading: Before Seven Bells Sound, Seek Three Shadows—Each Silent, Each Still, Each Beginning with F.");
+					" surface, reading: Before Seven Bells Sound, Seek Three Shadows--Each Silent, Each Still, Each Beginning with F.");
                 	break;
             	case 5:
                 	System.out.println("You take the fifth book and hastily open it. Disappointed, there was nothing of interest inside." +
@@ -74,10 +74,7 @@ public class LivingRoom extends Room {
 					exit = true;
 					break;
         	}
-		}
-
-		roomChoice();
-		
+		}		
 	}
 
 	@Override

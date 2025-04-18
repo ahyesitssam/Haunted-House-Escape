@@ -50,18 +50,25 @@ public abstract class Room {
     }
 
     public int enter() {
-    	if (!beenHereBefore) {
-			System.out.println(description);
-			beenHereBefore = true;
-		}
-
-		if (roomChoice() == getChoiceMax()) { // if the roomChoice selection is the last number, 
-                                              // then user is taken to voidInteractionChoice
-            voidInteractionChoice(); //user is taken back to voidInteractionChoice, which brings user
-                                     //back to roomChoice at the end of method to select next destination
+        if (!beenHereBefore) {
+            System.out.println(description);
+            beenHereBefore = true;
         }
-        return roomChoice();
+    
+        int choice = 0;
+        while (true) {
+            choice = roomChoice();
+    
+            if (choice == getChoiceMax()) { //if user chooses last option on prompted list (one that offers user interaction)
+                voidInteractionChoice(); // lets user visit iteractive object in room
+                continue; // Go back to top and prompt again
+            }
+    
+            return choice; // Leave the room and return the user's room choice
+        }
     }
+    
+    
     
     
     // all rooms (except woods) will have there own version of roomChoice

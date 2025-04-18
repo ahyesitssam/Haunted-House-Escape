@@ -27,8 +27,9 @@ public class Main {
         	switch (userChoice) {
         	case 1:
         		System.out.println("You go to the room on the left.");
-        		livingRoom.enter();
-        		livingRoom.voidInteractionChoice();
+        		//livingRoom.enter();
+        		userChoice = livingRoom.enter();
+
         		break;
         	case 2:
         		System.out.println("You go to the room on the right.");
