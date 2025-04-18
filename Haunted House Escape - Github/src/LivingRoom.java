@@ -42,7 +42,8 @@ public class LivingRoom extends Room {
 			System.out.println("2. Book 2");
 			System.out.println("3. Book 3");
 			System.out.println("4. Book 4");
-			System.out.println("5. Leave bookshelf");
+			System.out.println("5. Book 5");
+			System.out.println("6. Leave bookshelf");
 
 			int choice = scanner.nextInt();
 
