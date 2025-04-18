@@ -14,7 +14,7 @@ public abstract class Outside {
 	
 	
 	// Use to add a pause between dialogue
-    public void keyPress() {
+    protected void keyPress() {
         System.out.println("[Press 'Enter' to continue...]");
         scanner.nextLine();
     }

@@ -13,13 +13,14 @@ public class CrawlSpaceEscape extends Outside{
     private Inventory inventory;
     
 
-    public CrawlSpaceEscape(Inventory inventory){
-        this.description="Looks like this could lead somewhere... I wonder what I could use to open it...";
+    public CrawlSpaceEscape(Inventory inventory) {
+        this.description="*You come across a small door in the wall*\nLooks like this could lead somewhere..." +
+        " I wonder what I could use to open it...";
         this.inventory=inventory;
     }
 
     @Override
-    public void enter(){
+    public void enter() {
         System.out.println(description);
         if (inventory.hasItem("latch")){
             System.out.println("Ah, maybe my latch will work!");

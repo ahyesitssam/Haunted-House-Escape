@@ -20,7 +20,7 @@ public abstract class Room {
     /**
      * When called, adds a pause and waits for user input to continue.
      */
-    public void keyPress() {
+    protected void keyPress() {
         System.out.println("[Press 'Enter' to continue...]");
         scanner.nextLine();
     }

@@ -11,8 +11,8 @@ public class Kitchen {
     private String description;
 
     public Kitchen(){
-        this.description="*You enter the kitchen*\nThe pantries are all empty except for plates and utensils." + 
-        "Water drips from the faucet.";
+        this.description="*You enter the kitchen*\nThe pantries are all empty except for plates and utensils. " + 
+        "Water slowly drips from the faucet.";
     }
 
     public void enter() {

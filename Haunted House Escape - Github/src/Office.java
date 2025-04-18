@@ -2,7 +2,8 @@ public class Office {
     private String description;
 
     public Office(){
-        this.description="*You enter the office*\nEverything is tidily organized, calligraphy pens and paper pristinely layed out.";
+        this.description="*You enter the office*\nEverything is tidily organized, "+
+        "calligraphy pens and paper pristinely laid out.";
     }
 
     public void enter(){

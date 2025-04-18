@@ -11,7 +11,7 @@ public class Foyer extends Room {
     
 	public Foyer () {
 		this.description = "Now locked inside the errie house, you look around." + 
-		"Maybe there's a way you can get out of here? You notice notice four places you can go.";
+		"Maybe there's a way you can get out of here... You notice notice four places you can go.";
 	}
 	
 	@Override
