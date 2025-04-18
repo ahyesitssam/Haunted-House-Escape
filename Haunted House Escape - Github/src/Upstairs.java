@@ -9,13 +9,4 @@ public class Upstairs {
         System.out.println(description);
     }
 
-/*
-    public void inspect(){
-        System.out.println()
-    }
-
-    public void moveOn(){
-        System.out.println()
-    }
-*/
 }

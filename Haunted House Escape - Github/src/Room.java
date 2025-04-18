@@ -54,14 +54,24 @@ public abstract class Room {
 			System.out.println(description);
 			beenHereBefore = true;
 		}
-		return roomChoice();
+
+		if (roomChoice() == getChoiceMax()) { // if the roomChoice selection is the last number, 
+                                              // then user is taken to voidInteractionChoice
+            voidInteractionChoice(); //user is taken back to voidInteractionChoice, which brings user
+                                     //back to roomChoice at the end of method to select next destination
+        }
+        return roomChoice();
     }
     
     
     // all rooms (except woods) will have there own version of roomChoice
     public abstract int roomChoice();
     
-    
-    // some rooms may have interactionChoice
-    public abstract int interactionChoice();
+
+    // some rooms may have voidInteractionChoice
+    public abstract void voidInteractionChoice();
+
+    // all rooms have a max amount of choices to select within roomChoice()
+    // and only the last option will be capable of asking user to view interaction object
+    public abstract int getChoiceMax();
 }

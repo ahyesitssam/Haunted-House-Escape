@@ -15,7 +15,7 @@ public class CrawlSpaceEscape extends Outside{
 
     public CrawlSpaceEscape(Inventory inventory) {
         this.description="*You come across a small door in the wall*\nLooks like this could lead somewhere..." +
-        " I wonder what I could use to open it...";
+        " I wonder what I could use to open it?";
         this.inventory=inventory;
     }
 

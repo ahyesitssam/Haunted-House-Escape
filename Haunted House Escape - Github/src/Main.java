@@ -16,6 +16,8 @@ public class Main {
     	Outside woods = new Woods();
     	Room foyer = new Foyer();
     	Room livingRoom = new LivingRoom();
+		Room masterBedroom = new MasterBedroom();
+		Room diningRoom = new DiningRoom();
     	
     	// Start the game
         woods.enter();
@@ -26,15 +28,15 @@ public class Main {
         	case 1:
         		System.out.println("You go to the room on the left.");
         		livingRoom.enter();
-        		livingRoom.interactionChoice();
+        		livingRoom.voidInteractionChoice();
         		break;
         	case 2:
         		System.out.println("You go to the room on the right.");
-        		//masterBedroom.enter();
+        		masterBedroom.enter();
         		break;
         	case 3:
         		System.out.println("You go down the hall.");
-        		//diningRoom.enter();
+        		diningRoom.enter();
         		break;
         	case 4:
         		System.out.println("You head upstairs.");

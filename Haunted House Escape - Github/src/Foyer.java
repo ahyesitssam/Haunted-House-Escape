@@ -32,8 +32,15 @@ public class Foyer extends Room {
 	
 	// Unused but needed via Room requirements
 	@Override
-	public int interactionChoice() {
-		return 0;
+	public void voidInteractionChoice() {
+
+	}
+
+	@Override
+	public int getChoiceMax() {
+		return 5; //choiceMax goes out of bounds (cannot be returned from roomChoice) 
+				  //since there is no voidInteractionChoice to view in Foyer, so enter method 
+				  //in Room class will never bring user to voidInteractionChoice method
 	}		
 }
 
