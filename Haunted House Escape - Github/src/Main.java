@@ -8,42 +8,64 @@
  * Purpose: This class allows the player to initiate gameplay.
  */
 public class Main {
-    public static void main(String[] args) {
-    	
+    public static void main(String[] args) {  	
     	int userChoice;
     	
     	// initialize all the rooms
     	Outside woods = new Woods();
     	Room foyer = new Foyer();
+		Room upstairs = new Upstairs();
     	Room livingRoom = new LivingRoom();
 		Room masterBedroom = new MasterBedroom();
 		Room diningRoom = new DiningRoom();
+		Room office = new Office();
+		Room kitchen = new Kitchen();
     	
     	// Start the game
         woods.enter();
         userChoice = foyer.enter();
+		boolean downstairs = true;
       
-        while (true) {
-        	switch (userChoice) {
-        	case 1:
-        		System.out.println("You go to the room on the left.");
-        		//livingRoom.enter();
-        		userChoice = livingRoom.enter();
+		while (true) {
+			if (downstairs) { // downstairs rooms
+				switch (userChoice) {
+					case 1:
+						System.out.println("You go to the living room.");
+						userChoice = livingRoom.enter();
+						break;
+					case 2:
+						System.out.println("You go to the master bedroom.");
+						userChoice = masterBedroom.enter();
+						break;
+					case 3:
+						System.out.println("You go to the dining room.");
+						userChoice = diningRoom.enter();
+						break;
+					case 4:
+						System.out.println("You head upstairs.");
+						downstairs = false; // player is now upstairs
+						userChoice = upstairs.enter(); // go to upstairs 
+						break;
+				}
+			} 
+			else if (!downstairs) { // upstairs rooms
+				switch (userChoice) {
+					case 1:
+						System.out.println("You go to the office.");
+						userChoice = office.enter();
 
-        		break;
-        	case 2:
-        		System.out.println("You go to the room on the right.");
-        		masterBedroom.enter();
-        		break;
-        	case 3:
-        		System.out.println("You go down the hall.");
-        		diningRoom.enter();
-        		break;
-        	case 4:
-        		System.out.println("You head upstairs.");
-        		break;
-            }
-        }
-        
+						break;
+					case 2:
+						System.out.println("You go to the kitchen.");
+						userChoice = kitchen.enter();
+						break;
+					case 3:
+						System.out.println("You head downstairs.");
+						downstairs = true; // player is now downstairs
+						userChoice = foyer.enter(); // go to foyer downstairs
+						break;
+				}
+			}
+		}
     }
 }

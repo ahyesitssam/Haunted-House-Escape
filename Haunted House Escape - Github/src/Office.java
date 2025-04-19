@@ -1,23 +1,20 @@
 public class Office extends Room {
-    private String description;
 
     public Office() {
-        this.description="*You enter the office*\nEverything is tidily organized, "+
-        "calligraphy pens and paper pristinely laid out.";
+        this.description="*Everything is tidily organized, calligraphy pens and paper pristinely laid out.";
     }
 
-	@Override
+    @Override
 	public int roomChoice() {
 		int choice = 0;
-		while (choice <= 0 || choice > 5) {
-			System.out.println("-> What will you do?");
-			System.out.println("1. Room to the Left");
-			System.out.println("2. Room to the Right");
-			System.out.println("3. Down the hall in front of you");
-			System.out.println("4. Upstairs");
-            System.out.println("5. Look through desk");
+		while (choice <= 0 || choice > 4) {
+			System.out.println("-> Where will you go?");
+			System.out.println("1. Office");
+			System.out.println("2. Kitchen");
+			System.out.println("3. Downstairs");
+            System.out.println("4. Look through desk");
 			System.out.print("Choose a number: ");
-			choice = numberChoice(5);
+			choice = numberChoice(4);
 		}	
 		return choice;
 	}
@@ -29,6 +26,6 @@ public class Office extends Room {
 
     @Override
     public int getChoiceMax() {
-        return 5;
+        return 4;
     }
 }

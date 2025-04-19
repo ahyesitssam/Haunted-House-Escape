@@ -8,23 +8,21 @@
  * Purpose:
  */
 public class Kitchen extends Room {
-    private String description;
 
     public Kitchen(){
-        this.description="*You enter the kitchen*\nThe pantries are all empty except for plates and utensils. " + 
+        this.description="The pantries are all empty except for plates and utensils. " + 
         "Water slowly drips from the faucet.";
     }
 
     @Override
 	public int roomChoice() {
 		int choice = 0;
-		while (choice <= 0 || choice > 5) {
-			System.out.println("-> What will you do?");
-			System.out.println("1. Room to the Left");
-			System.out.println("2. Room to the Right");
-			System.out.println("3. Down the hall in front of you");
-			System.out.println("4. Upstairs");
-            System.out.println("5. View fridge");
+		while (choice <= 0 || choice > 4) {
+			System.out.println("-> Where will you go?");
+			System.out.println("1. Office");
+			System.out.println("2. Kitchen");
+			System.out.println("3. Downstairs");
+            System.out.println("4. View fridge");
 			System.out.print("Choose a number: ");
 			choice = numberChoice(4);
 		}	
@@ -39,6 +37,6 @@ public class Kitchen extends Room {
 
     @Override
     public int getChoiceMax() {
-        return 5;
+        return 4;
     }
 }

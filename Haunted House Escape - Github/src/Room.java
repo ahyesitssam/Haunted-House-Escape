@@ -61,7 +61,7 @@ public abstract class Room {
     
             if (choice == getChoiceMax()) { //if user chooses last option on prompted list (one that offers user interaction)
                 voidInteractionChoice(); // lets user visit iteractive object in room
-                continue; // Go back to top and prompt again
+                continue; // Goes back to top and prompt again
             }
     
             return choice; // Leave the room and return the user's room choice

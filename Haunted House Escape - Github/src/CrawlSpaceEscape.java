@@ -12,7 +12,6 @@ public class CrawlSpaceEscape extends Outside{
     private String description;
     private Inventory inventory;
     
-
     public CrawlSpaceEscape(Inventory inventory) {
         this.description="*You come across a small door in the wall*\nLooks like this could lead somewhere..." +
         " I wonder what I could use to open it?";
@@ -29,7 +28,6 @@ public class CrawlSpaceEscape extends Outside{
         } else{
             System.out.println("It's sealed shut. Maybe I should explore more.");
         }
-
     }
 
 }

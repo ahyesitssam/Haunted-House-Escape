@@ -10,20 +10,20 @@
 public class LivingRoom extends Room { 
  
     public LivingRoom() {
-        this.description = "Looking aroud, this room appers to be a living room.\nThere's an arid chill that fills the room, "  + 
+        this.description = "Looking aroud, this room appers to be a living room. There's an arid chill that fills the room, "  + 
         "and dust covers the surrounding sofas and furniture.";
     }
 
-	@Override
+    @Override
 	public int roomChoice() {
 		int choice = 0;
 		while (choice <= 0 || choice > 5) {
 			System.out.println("-> What will you do?");
-			System.out.println("1. Room to the Left");
-			System.out.println("2. Room to the Right");
-			System.out.println("3. Down the hall in front of you");
+			System.out.println("1. Living room");
+			System.out.println("2. Master bedroom");
+			System.out.println("3. Dining room");
 			System.out.println("4. Upstairs");
-			System.out.println("5. Bookshelf in the corner");
+            System.out.println("5. Bookshelf in the corner");
 			System.out.print("Choose a number: ");
 			choice = numberChoice(5);
 		}	
