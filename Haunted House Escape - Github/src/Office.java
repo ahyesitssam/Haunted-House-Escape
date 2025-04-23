@@ -1,6 +1,7 @@
 public class Office extends Room {
 
-    public Office() {
+    public Office(Inventory inventory) {
+        super(inventory);
         this.description="*Everything is tidily organized, calligraphy pens and paper pristinely laid out.";
     }
 

@@ -10,16 +10,17 @@
 public class Main {
     public static void main(String[] args) {  	
     	int userChoice;
+		Inventory userInventory = new Inventory();
     	
     	// initialize all the rooms
     	Outside woods = new Woods();
-    	Room foyer = new Foyer();
-		Room upstairs = new Upstairs();
-    	Room livingRoom = new LivingRoom();
-		Room masterBedroom = new MasterBedroom();
-		Room diningRoom = new DiningRoom();
-		Room office = new Office();
-		Room kitchen = new Kitchen();
+    	Room foyer = new Foyer(userInventory);
+		Room upstairs = new Upstairs(userInventory);
+    	Room livingRoom = new LivingRoom(userInventory);
+		Room masterBedroom = new MasterBedroom(userInventory);
+		Room diningRoom = new DiningRoom(userInventory);
+		Room office = new Office(userInventory);
+		Room kitchen = new Kitchen(userInventory);
     	
     	// Start the game
         woods.enter();

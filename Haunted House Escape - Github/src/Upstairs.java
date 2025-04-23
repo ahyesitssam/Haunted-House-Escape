@@ -1,6 +1,7 @@
 public class Upstairs extends Room{
 
-    public Upstairs(){
+    public Upstairs(Inventory inventory) {
+        super(inventory);
         this.description="A long hallway introduces a new set of rooms.";
     }
 

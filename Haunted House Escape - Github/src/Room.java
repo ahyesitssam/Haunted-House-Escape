@@ -12,9 +12,11 @@ public abstract class Room {
     protected String description;
     protected boolean beenHereBefore;
     protected Scanner scanner = new Scanner(System.in);
+    protected Inventory inventory;
 
-    public Room() {
+    public Room(Inventory inventory) {
     	this.beenHereBefore = false;
+        this.inventory = inventory;
     }
 
     /**

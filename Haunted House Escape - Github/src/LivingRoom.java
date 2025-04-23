@@ -9,7 +9,8 @@
  */
 public class LivingRoom extends Room { 
  
-    public LivingRoom() {
+    public LivingRoom(Inventory inventory) {
+        super(inventory);
         this.description = "Looking aroud, this room appers to be a living room. There's an arid chill that fills the room, "  + 
         "and dust covers the surrounding sofas and furniture.";
     }
@@ -63,7 +64,7 @@ public class LivingRoom extends Room {
             	case 4:
                 	System.out.println("Lifting the fourth book, you notice a slight increase in heaviness. Intrigued, you open" +
 					" its contents to reveal a hidden compartment. Laying inside is a wooden block with a message carved into the" +
-					" surface, reading: Before Seven Bells Sound, Seek Three Shadows--Each Silent, Each Still, Each Beginning with F.");
+					" surface, reading: Before Seven Bells Sound, Seek Three Shadows--Each With Five Arms"); // (code 735)
                 	break;
             	case 5:
                 	System.out.println("You take the fifth book and hastily open it. Disappointed, there was nothing of interest inside." +

@@ -1,6 +1,7 @@
 public class DiningRoom extends Room {
 
-    public DiningRoom(){
+    public DiningRoom(Inventory inventory) {
+        super(inventory);
         this.description="Spiderwebs cover the chairs and drawers are loaded with silverware and fine China sets.";  
     }
 
