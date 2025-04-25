@@ -43,37 +43,59 @@ public class Kitchen extends Room {
             String input = scanner.nextLine();
             
             if (input.equals("735")) {
-                System.out.println("The door swings open.");
-                if (!inventory.hasItem("crowbar")) {
-                    System.out.println("You gasp, as bottles of organoids lay on each of the shelves." +
-                    " Holding your breath, you take a closer look and find a" + 
-                    " crowbar laying inconspicuously in the back. Maybe this could be useful... you take it.\n");
-
-                    inventory.addItem("crowbar");
-                } else {
-                    System.out.println("There is nothing left to be found here.");
-                }
-
-                exit = true;  
+                exit = userEntersCorrectPassword();  
             } else {
-                System.out.println("Your code failed. What will you do?");
-                System.out.println("1. Try again");
-                System.out.println("2. Leave wardrobe");
-                int choice = scanner.nextInt();
-                scanner.nextLine();
-
-                switch (choice) {
-                    case 1:
-                        exit = false;
-                        break;
-                    case 2:
-                        exit = true; //should exit while loop and finish method
-                        break;
-                }
+                exit = userEntersWrongPassword();
             }
         }
     }
 
+    /**
+     * Handles interaction if user entered correct password.
+     * @return true if the user exists, false otherwise
+     */
+    private boolean userEntersCorrectPassword() {
+        boolean exit;
+        System.out.println("The door swings open.");
+        if (!inventory.hasItem("crowbar")) {
+            System.out.println("You gasp, as bottles of organoids lay on each of the shelves." +
+            " Holding your breath, you take a closer look and find a" + 
+            " crowbar laying inconspicuously in the back. Maybe this could be useful... you take it.\n");
+
+            inventory.addItem("crowbar");
+        } else {
+            System.out.println("There is nothing left to be found here.");
+        }
+
+        exit = true;
+        return exit;
+    }
+
+    /**
+     * Handles interaction if user entered incorrect password.
+     * @return true if user has decieded to exit, false otherwise
+     */
+    private boolean userEntersWrongPassword() {
+        boolean exit;
+        System.out.println("Your code failed. What will you do?");
+        System.out.println("1. Try again");
+        System.out.println("2. Leave wardrobe");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1:
+                exit = false;
+                break;
+            case 2:
+                exit = true; //should exit while loop and finish method
+                break;
+        }
+        exit = true;
+        return exit;
+    }
+
+    
     @Override
     public int getChoiceMax() {
         return 4;
