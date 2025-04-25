@@ -11,6 +11,8 @@ public class Main {
     public static void main(String[] args) {  	
     	int userChoice;
 		Inventory userInventory = new Inventory();
+		String lockedRoomDescription = "You turn the knob but the door seems to be locked. I wonder" +
+		" what I could use to unlock it?";
     	
     	// initialize all the rooms
     	Outside woods = new Woods();
@@ -53,8 +55,12 @@ public class Main {
 				switch (userChoice) {
 					case 1:
 						System.out.println("You go to the office.");
-						userChoice = office.enter();
-
+						if (!userInventory.hasItem("key")) { // if player doesn't have key
+							System.out.println(lockedRoomDescription);
+							userChoice = upstairs.enter(); // present upstairs rooms again
+						} else {
+							userChoice = office.enter();
+						}
 						break;
 					case 2:
 						System.out.println("You go to the kitchen.");

@@ -26,7 +26,7 @@ public class DiningRoom extends Room {
 		System.out.println("You're lured to the painting on the wall, and gently dust its surface with your fingertips." 
         + " Underneath the debris lies a sad, brooding man with his hands clamped into fists and color drained from his"
         + " face. You go to dust the surface even more, and are shocked to find a faint sentence written in the bottom"
-        + " corner: 'The second bell tolls twice, the first serpent coils thrice, and the final step echoes once in shadow.'"); // (code 3 2 1)
+        + " corner: 'The second bell tolls twice, the first serpent coils thrice, and the final step echoes once in shadow.'\n"); // (code 3 2 1)
     }
 
     @Override

@@ -32,28 +32,46 @@ public class Kitchen extends Room {
 
     @Override
     public void voidInteractionChoice() {
+        boolean exit = false;
 
         System.out.println("You stand in front of the fridge. The surface is painted in" +
-        " black and is as smooth as silk. You pull on the door.\n Nothing. You then notice" +
-        " a number combination in the upper corner.");
+        " black and is as smooth as silk. You pull on the door.\nNothing. You then notice" +
+        " a numbered key pad in the upper corner.");
         
-        System.out.print("What could it be? ");
-        String input = scanner.nextLine();
-        
-        if (input.equals("735")) {
-            System.out.println("The door swings open. You gasp, as bottles of organoids lay" + 
-            " on each of the shelves. Holding your breath, you take a closer look and find a" + 
-            " crowbar laying inconspicuously in the back. Maybe this could be useful... you take it.");
-            if (!inventory.hasItem("crowbar") || inventory.length() == 0) {
-                System.out.println("You gasp, as bottles of organoids lay on each of the shelves." +
-                " Holding your breath, you take a closer look and find a" + 
-                " crowbar laying inconspicuously in the back. Maybe this could be useful... you take it.");
-                
-                inventory.addItem("crowbar");
+        while (!exit) {
+            System.out.print("What could the code be? "); 
+            String input = scanner.nextLine();
+            
+            if (input.equals("735")) {
+                System.out.println("The door swings open.");
+                if (!inventory.hasItem("crowbar")) {
+                    System.out.println("You gasp, as bottles of organoids lay on each of the shelves." +
+                    " Holding your breath, you take a closer look and find a" + 
+                    " crowbar laying inconspicuously in the back. Maybe this could be useful... you take it.\n");
+
+                    inventory.addItem("crowbar");
+                } else {
+                    System.out.println("There is nothing left to be found here.");
+                }
+
+                exit = true;  
             } else {
-                System.out.println("There is nothing left to be found here.");
+                System.out.println("Your code failed. What will you do?");
+                System.out.println("1. Try again");
+                System.out.println("2. Leave wardrobe");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (choice) {
+                    case 1:
+                        exit = false;
+                        break;
+                    case 2:
+                        exit = true; //should exit while loop and finish method
+                        break;
+                }
             }
-        }  
+        }
     }
 
     @Override

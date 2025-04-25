@@ -24,7 +24,7 @@ public class MasterBedroom extends Room {
     @Override
     public void voidInteractionChoice() {
         boolean exit  = false; 
-        System.out.println("You walk up to the intimidatingly-sized wardrobe and pull on its handle");
+        System.out.println("You walk up to the intimidatingly-sized wardrobe and pull on its handle.");
 
         if (inventory.hasItem("key")) { //if user has key, there is nothing left to look for
             System.out.println("There is nothing left to be found here.");
@@ -39,7 +39,7 @@ public class MasterBedroom extends Room {
                 if (input.equals("321")) {
                     System.out.println("The lock comes undone, and you gasp in satisfaction. You find a" + 
                     " small, golden key. You start to think that finding an exit might be possible afterall," + 
-                    " and quickly swipe the key into your pocket.");
+                    " and quickly swipe the key into your pocket.\n");
 
                     inventory.addItem("key");
                     exit = true; //should exit while loop and finish method
