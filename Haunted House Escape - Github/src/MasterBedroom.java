@@ -29,39 +29,54 @@ public class MasterBedroom extends Room {
         if (inventory.hasItem("key")) { //if user has key, there is nothing left to look for
             System.out.println("There is nothing left to be found here.");
         } else {
-            System.out.println("The door won't budge, and you look down to find the doors bound together by a lock." +
-            " Thinking back, you wonder if there was a clue that could've given you the combo.");
-            
-            while (!exit) { 
-                System.out.print("What could it be? ");
-                String input = scanner.nextLine();
-            
-                if (input.equals("321")) {
-                    System.out.println("The lock comes undone, and you gasp in satisfaction. You find a" + 
-                    " small, golden key. You start to think that finding an exit might be possible afterall," + 
-                    " and quickly swipe the key into your pocket.\n");
-
-                    inventory.addItem("key");
-                    exit = true; //should exit while loop and finish method
-                } else {
-                    System.out.println("Your code failed. What will you do?");
-                    System.out.println("1. Try again");
-                    System.out.println("2. Leave wardrobe");
-
-                    int choice = scanner.nextInt();
-                    scanner.nextLine();
-
-                    switch (choice) {
-                        case 1:
-                            exit = false;
-                            break;
-                        case 2:
-                            exit = true; //should exit while loop and finish method
-                            break;
-                    }
-                }
-            }
+            userHasNoKey(exit);
         } 
+    }
+
+    private void userHasNoKey(boolean exit) {
+        System.out.println("The door won't budge, and you look down to find the doors bound together by a lock." +
+        " Thinking back, you wonder if there was a clue that could've given you the combo.");
+        
+        while (!exit) { 
+            System.out.print("What could it be? ");
+            String input = scanner.nextLine();
+        
+            if (input.equals("321")) {
+                exit = correctPasswordEntered();
+            } else {
+                exit = incorrectPasswordEntered(exit);
+            }
+        }
+    }
+
+    private boolean correctPasswordEntered() {
+        boolean exit;
+        System.out.println("The lock comes undone, and you gasp in satisfaction. You find a" + 
+        " small, golden key. You start to think that finding an exit might be possible afterall," + 
+        " and quickly swipe the key into your pocket.\n");
+
+        inventory.addItem("key");
+        exit = true; //should exit while loop and finish method
+        return exit;
+    }
+
+    private boolean incorrectPasswordEntered(boolean exit) {
+        System.out.println("Your code failed. What will you do?");
+        System.out.println("1. Try again");
+        System.out.println("2. Leave wardrobe");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1:
+                exit = false;
+                break;
+            case 2:
+                exit = true; //should exit while loop and finish method
+                break;
+        }
+        return exit;
     }
 
     @Override

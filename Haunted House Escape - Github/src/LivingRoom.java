@@ -82,58 +82,77 @@ public class LivingRoom extends Room {
 	private static boolean handleUserInput(int choice) {
 		switch (choice) {
 			case 1:
-				if (bookDescList.get(0) != null) {
-					System.out.println(bookDescList.get(0));
-					optionList.set(0, null);
-					bookDescList.set(0, null);
-				} else {
-					System.out.println("Looks like you've already looked at this book");
-				}
+				book1selected();
 				break;
 			case 2:
-				if (bookDescList.get(1) != null) {	
-					System.out.println(bookDescList.get(1));
-					optionList.set(1, null);
-					bookDescList.set(1, null);
-				} else {
-					System.out.println("Looks like you've already looked at this book");
-				}
+				book2selected();
 				break;
 			case 3:
-				if (bookDescList.get(2) != null) {
-					System.out.println(bookDescList.get(2));
-					optionList.set(2, null);
-					bookDescList.set(2, null);
-				} else {
-					System.out.println("Looks like you've already looked at this book");
-				}
+				book3selected();
 				break;
 			case 4:
-				if (bookDescList.get(3) != null) {
-					System.out.println(bookDescList.get(3));
-					optionList.set(3, null);
-					bookDescList.set(3, null);
-				} else {
-					System.out.println("Looks like you've already looked at this book");
-				}
+				book4selected();
 				break;
 			case 5:
-				if (bookDescList.get(4) != null) {
-					System.out.println(bookDescList.get(4));
-					optionList.set(4, null);
-					bookDescList.set(4, null);
-				} else {
-					System.out.println("Looks like you've already looked at this book");
-				}
+				book5selected();
 				break;
 			case 6:
 				System.out.println(bookDescList.get(5));
 				bookDescList.clear(); //resets the lists for future visits back
 				optionList.clear();
 				return true;
-			
 		}
 		return false;
+	}
+
+	private static void book5selected() {
+		if (bookDescList.get(4) != null) {
+			System.out.println(bookDescList.get(4));
+			optionList.set(4, null);
+			bookDescList.set(4, null);
+		} else {
+			System.out.println("Looks like you've already looked at this book");
+		}
+	}
+
+	private static void book4selected() {
+		if (bookDescList.get(3) != null) {
+			System.out.println(bookDescList.get(3));
+			optionList.set(3, null);
+			bookDescList.set(3, null);
+		} else {
+			System.out.println("Looks like you've already looked at this book");
+		}
+	}
+
+	private static void book3selected() {
+		if (bookDescList.get(2) != null) {
+			System.out.println(bookDescList.get(2));
+			optionList.set(2, null);
+			bookDescList.set(2, null);
+		} else {
+			System.out.println("Looks like you've already looked at this book");
+		}
+	}
+
+	private static void book2selected() {
+		if (bookDescList.get(1) != null) {	
+			System.out.println(bookDescList.get(1));
+			optionList.set(1, null);
+			bookDescList.set(1, null);
+		} else {
+			System.out.println("Looks like you've already looked at this book");
+		}
+	}
+
+	private static void book1selected() {
+		if (bookDescList.get(0) != null) {
+			System.out.println(bookDescList.get(0));
+			optionList.set(0, null);
+			bookDescList.set(0, null);
+		} else {
+			System.out.println("Looks like you've already looked at this book");
+		}
 	}
 	
 	/**
