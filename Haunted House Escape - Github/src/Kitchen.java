@@ -45,7 +45,7 @@ public class Kitchen extends Room {
             if (input.equals("735")) {
                 exit = userEntersCorrectPassword();  
             } else {
-                exit = userEntersWrongPassword();
+                exit = incorrectPasswordEntered();
             }
         }
     }
@@ -75,25 +75,32 @@ public class Kitchen extends Room {
      * Handles interaction if user entered incorrect password.
      * @return true if user has decieded to exit, false otherwise
      */
-    private boolean userEntersWrongPassword() {
-        boolean exit;
-        System.out.println("Your code failed. What will you do?");
-        System.out.println("1. Try again");
-        System.out.println("2. Leave wardrobe");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-
-        switch (choice) {
-            case 1:
-                exit = false;
-                break;
-            case 2:
-                exit = true; //should exit while loop and finish method
-                break;
+    private boolean incorrectPasswordEntered() {
+        while (true) {
+            System.out.println("Your code failed. What will you do?");
+            System.out.println("1. Try again");
+            System.out.println("2. Leave fridge");
+    
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
+                scanner.nextLine(); 
+    
+                switch (choice) {
+                    case 1:
+                        return false; 
+                    case 2:
+                        return true;  
+                    default:
+                        System.out.println("Invalid choice. Please enter 1 or 2.");
+                }
+            } else {
+                scanner.nextLine(); 
+                System.out.println("Invalid input. Please enter a number.");
+            }
         }
-        exit = true;
-        return exit;
     }
+    
+    
 
     
     @Override

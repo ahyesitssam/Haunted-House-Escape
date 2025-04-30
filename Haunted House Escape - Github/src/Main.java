@@ -23,6 +23,8 @@ public class Main {
 		Room diningRoom = new DiningRoom(userInventory);
 		Room office = new Office(userInventory);
 		Room kitchen = new Kitchen(userInventory);
+		Outside crawlSpace = new CrawlSpaceEscape(userInventory);
+
     	
     	// Start the game
         woods.enter();

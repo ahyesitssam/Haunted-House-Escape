@@ -31,8 +31,24 @@ public class Office extends Room {
         System.out.println("You walk over to the wall. Looking up close, you notice a rectangular" +
         " outline in the paint--resembling something of a hidden door, except only a few square feet in size." +
         " You try pounding on and pushing against the wall, but to no avail, nothing moves.");
+
+        if (inventory.hasItem("crowbar")) {
+            userHasCrowbar();
+        } else {
+            System.out.println("There must be something in the house that can open this...");
+        }      
     }
 
+    private void userHasCrowbar() {
+        System.out.println("Aha! You recall the crowbar you found.\nYou take it out and dig its edge into the" +
+        " door's outline. It takes a few tries, but eventually the it opens.");
+        keyPress();
+        System.out.println("You know this might be your best chance of escaping the house, so without hesitation," +
+        " you delve into the darkness of the narrow walkway");
+        CrawlSpaceEscape crawlSpace = new CrawlSpaceEscape(inventory);
+        crawlSpace.enter();
+    }
+    
     @Override
     public int getChoiceMax() {
         return 4;
