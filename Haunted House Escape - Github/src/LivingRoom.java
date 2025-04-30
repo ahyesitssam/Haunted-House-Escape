@@ -27,6 +27,11 @@ public class LivingRoom extends Room {
         "and dust covers the surrounding sofas and furniture.";
     }
 
+	/**
+	 * Prints list room choices for user to select.
+	 * 
+	 * @return the number corresponding to the desried room
+	 */
     @Override
 	public int roomChoice() {
 		int choice = 0;
@@ -43,6 +48,10 @@ public class LivingRoom extends Room {
 		return choice;
 	}
 
+	/**
+	 * User has selected to view the bookshelf. Method prints out books 
+	 * that have yet to be looked at, and calls handleUserInput().
+	 */
 	@Override
 	public void voidInteractionChoice() { //bookshelf gives player code 
 		boolean exit = false;
@@ -69,6 +78,9 @@ public class LivingRoom extends Room {
 		}		
 	}
 
+	/**
+	 * Helper method. Returns the number of choices within the LivingRoom
+	 */
 	@Override
 	public int getChoiceMax() {
 		return 5;
@@ -82,19 +94,19 @@ public class LivingRoom extends Room {
 	private static boolean handleUserInput(int choice) {
 		switch (choice) {
 			case 1:
-				book1selected();
+				bookSelected(1);
 				break;
 			case 2:
-				book2selected();
+				bookSelected(2);
 				break;
 			case 3:
-				book3selected();
+				bookSelected(3);
 				break;
 			case 4:
-				book4selected();
+				bookSelected(4);
 				break;
 			case 5:
-				book5selected();
+				bookSelected(5);
 				break;
 			case 6:
 				System.out.println(bookDescList.get(5));
@@ -105,51 +117,18 @@ public class LivingRoom extends Room {
 		return false;
 	}
 
-	private static void book5selected() {
-		if (bookDescList.get(4) != null) {
-			System.out.println(bookDescList.get(4));
-			optionList.set(4, null);
-			bookDescList.set(4, null);
-		} else {
-			System.out.println("Looks like you've already looked at this book");
-		}
-	}
-
-	private static void book4selected() {
-		if (bookDescList.get(3) != null) {
-			System.out.println(bookDescList.get(3));
-			optionList.set(3, null);
-			bookDescList.set(3, null);
-		} else {
-			System.out.println("Looks like you've already looked at this book");
-		}
-	}
-
-	private static void book3selected() {
-		if (bookDescList.get(2) != null) {
-			System.out.println(bookDescList.get(2));
-			optionList.set(2, null);
-			bookDescList.set(2, null);
-		} else {
-			System.out.println("Looks like you've already looked at this book");
-		}
-	}
-
-	private static void book2selected() {
-		if (bookDescList.get(1) != null) {	
-			System.out.println(bookDescList.get(1));
-			optionList.set(1, null);
-			bookDescList.set(1, null);
-		} else {
-			System.out.println("Looks like you've already looked at this book");
-		}
-	}
-
-	private static void book1selected() {
-		if (bookDescList.get(0) != null) {
-			System.out.println(bookDescList.get(0));
-			optionList.set(0, null);
-			bookDescList.set(0, null);
+	/**
+	 * Handles user input for which book has been selected. If it has
+	 *  not been viewed already, it prints the infromation to the user. 
+	 * Otherwise, it tells the user its already been checked out.
+	 * 
+	 * @param index the book number the user selected
+	 */
+	private static void bookSelected(int index) {
+		if (bookDescList.get(index) != null) {
+			System.out.println(bookDescList.get(index));
+			optionList.set(index, null);
+			bookDescList.set(index, null);
 		} else {
 			System.out.println("Looks like you've already looked at this book");
 		}
@@ -157,24 +136,22 @@ public class LivingRoom extends Room {
 	
 	/**
 	 * Initializes the option list with values.
-	 * @return the populated arraylist
 	 */
 	private static void getOptionList() {
-		//ArrayList<String> optionList = new ArrayList<>();
+		optionList.add(null); //dummy value
 		optionList.add("1. Book 1");
 		optionList.add("2. Book 2");
 		optionList.add("3. Book 3");
 		optionList.add("4. Book 4");
 		optionList.add("5. Book 5");
 		optionList.add("6. Leave Bookshelf");
-		//return optionList;
 	}
 	
 	/**
 	 * Initializes the book description list with values.
-	 * @return the populated arraylist
 	 */
 	private static void getBookDescList() {
+		bookDescList.add(null);
 		bookDescList.add("You open the first book. When you spread the pages, nothing but dust falls" +
 					" out and floods your nostrils. Disgusted, you quickly shove it back in its place.");
 		bookDescList.add("You take the second book and cautiously pry it open-careful not to damage its" +
