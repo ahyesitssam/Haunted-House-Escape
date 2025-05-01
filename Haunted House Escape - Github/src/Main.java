@@ -1,36 +1,38 @@
 /**
- * Class: Main  
- * Group: C 
- * Version: 1.0  
- * Course: CSE201 E  
- * Last Updated: March 6, 2025  
- *
- * Purpose: This class allows the player to initiate gameplay.
+ * Class: Main
+ * Course: CSE201
+ * Group: C
+ * Version 2.0
+ * Last Updated: 4/30
+ * 
+ * This class allows the user to execute game play by initializing
+ * all rooms and spaces within the game
+ * 
+ * @author brunsaj2, levinee7
+ * 
  */
 public class Main {
-    public static void main(String[] args) {  	
-    	int userChoice;
+	public static void main(String[] args) {
+		int userChoice;
 		Inventory userInventory = new Inventory();
 		String lockedRoomDescription = "You turn the knob but the door seems to be locked. I wonder" +
-		" what I could use to unlock it?";
-    	
-    	// initialize all the rooms
-    	Outside woods = new Woods();
-    	Room foyer = new Foyer(userInventory);
+				" what I could use to unlock it?";
+
+		Outside woods = new Woods();
+		Room foyer = new Foyer(userInventory);
 		Room upstairs = new Upstairs(userInventory);
-    	Room livingRoom = new LivingRoom(userInventory);
+		Room livingRoom = new LivingRoom(userInventory);
 		Room masterBedroom = new MasterBedroom(userInventory);
 		Room diningRoom = new DiningRoom(userInventory);
 		Room office = new Office(userInventory);
 		Room kitchen = new Kitchen(userInventory);
 		Outside crawlSpace = new CrawlSpaceEscape(userInventory);
 
-    	
-    	// Start the game
-        woods.enter();
-        userChoice = foyer.enter();
+		// Start the game
+		woods.enter();
+		userChoice = foyer.enter();
 		boolean downstairs = true;
-      
+
 		while (true) {
 			if (downstairs) { // downstairs rooms
 				switch (userChoice) {
@@ -49,11 +51,10 @@ public class Main {
 					case 4:
 						System.out.println("You head upstairs.");
 						downstairs = false; // player is now upstairs
-						userChoice = upstairs.enter(); // go to upstairs 
+						userChoice = upstairs.enter(); // go to upstairs
 						break;
 				}
-			} 
-			else if (!downstairs) { // upstairs rooms
+			} else if (!downstairs) { // upstairs rooms
 				switch (userChoice) {
 					case 1:
 						System.out.println("You go to the office.");
@@ -76,5 +77,5 @@ public class Main {
 				}
 			}
 		}
-    }
+	}
 }

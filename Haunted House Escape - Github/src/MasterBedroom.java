@@ -5,29 +5,30 @@
  * Version 2.0
  * Last Updated: 4/30
  * 
- * This class serves as the Master bedroom of the house.
+ * This class serves as the master bedroom of the house.
  * It includes a wardrobe that is locked and requires a passcode to open.
  * Upon opening the wardrobe, the user recieves a small golden key used for
  * future interactions.
  * 
- * @author brunsaj2,
+ * @author brunsaj2, levinee7
  * 
  */
 public class MasterBedroom extends Room {
-
     /**
-     * Constructor. Initializes the MasterBedroom room.
+     * Constructor: Initializes the MasterBedroom
      * 
      * @param inventory the users inventory
      */
     public MasterBedroom(Inventory inventory) {
         super(inventory);
-        this.description = "The bedsheets are perfectly made, leaving behind no trace of anyone's presence.";
+        this.description = "The bedsheets are perfectly made, leaving behind no trace of any presence.";
     }
 
     /**
-     * Prints out list of options for the user.
-     */
+     * Method that presents user with different locations to choose from
+     * 
+     * @return int that user chooses, corrosponding to one of the locations
+     **/
     @Override
     public int roomChoice() {
         int choice = 0;
@@ -45,15 +46,16 @@ public class MasterBedroom extends Room {
     }
 
     /**
-     * Handles logic of whether or not user has already opened and unlocked the
-     * wardrobe.
+     * Method that checks to see whether user has key. If so, it prints
+     * that there's nothing to be found. If not, calls userHasNoKey() in
+     * order to prompt them to enter the code to the wardrobe.
      */
     @Override
     public void voidInteractionChoice() {
         boolean exit = false;
         System.out.println("You walk up to the intimidatingly-sized wardrobe and pull on its handle.");
 
-        if (inventory.hasItem("key")) { // if user has key, there is nothing left to look for
+        if (inventory.hasItem("key")) {
             System.out.println("There is nothing left to be found here.");
         } else {
             userHasNoKey(exit);
@@ -61,10 +63,13 @@ public class MasterBedroom extends Room {
     }
 
     /**
-     * Handles logic of if user has not already opened the wardrobe.
-     * Presents the locked wardrobe to the user
+     * Handles logic of when user has not already opened the wardrobe.
+     * Presents the locked wardrobe to the user, prompting them to
+     * enter a code. If the code is correct, calls correctPasswordEntered().
+     * If not, calls incorrectPasswordEntered().
      * 
-     * @param exit true if the user has decided to exit, false otherwise
+     * @param exit becomes true if the user has decided to exit or entered correct
+     *             password, false otherwise
      */
     private void userHasNoKey(boolean exit) {
         System.out.println("The door won't budge, and you look down to find the doors bound together by a lock." +
@@ -84,10 +89,7 @@ public class MasterBedroom extends Room {
     }
 
     /**
-     * Prints statement and adds key to inventory upon correct password.
-     * the user is given the golden key.
-     * 
-     * @return true if user
+     * Prints statement and adds key to user inventory upon correct password
      */
     private void correctPasswordEntered() {
         System.out.println("The lock comes undone, and you gasp in satisfaction. You find a" +
@@ -128,9 +130,11 @@ public class MasterBedroom extends Room {
     }
 
     /**
-     * Helper method. Represents maximum number of options listed upon entering the
-     * master bedroom.
-     */
+     * Method used to get the maximum choice the user can choose within
+     * roomChoice()
+     * 
+     * @return maximum choice: 5
+     **/
     @Override
     public int getChoiceMax() {
         return 5;

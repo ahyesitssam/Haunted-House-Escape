@@ -1,12 +1,17 @@
 import java.util.Scanner;
+
 /**
- * Class: Room  
- * Group: C  
- * Version: 1.0  
- * Course: CSE201 E  
- * Last Updated: March 6, 2025
+ * Class: DiningRoom
+ * Course: CSE201
+ * Group: C
+ * Version 2.0
+ * Last Updated: 4/30
  * 
- * Purpose:
+ * Abstract parent class of the rooms within the house, initializing
+ * methods to be used within each of the rooms.
+ * 
+ * @author brunsaj2, levinee7
+ * 
  */
 public abstract class Room {
     protected String description;
@@ -14,8 +19,13 @@ public abstract class Room {
     protected Scanner scanner = new Scanner(System.in);
     protected Inventory inventory;
 
+    /**
+     * Constructor: initializes Room parent class
+     * 
+     * @param inventory initializes user inventory
+     **/
     public Room(Inventory inventory) {
-    	this.beenHereBefore = false;
+        this.beenHereBefore = false;
         this.inventory = inventory;
     }
 
@@ -28,7 +38,9 @@ public abstract class Room {
     }
 
     /**
-     * Handles the user input, including input validation. Returns 0 if the choice is invalid.
+     * Method that handles the user input, including input validation.
+     * Returns 0 if the choice is invalid.
+     * 
      * @param paramNum the number of options the user is given
      * @return the users choices
      */
@@ -51,36 +63,54 @@ public abstract class Room {
         }
     }
 
+    /**
+     * Method that allows user to enter a room within the house.
+     * Checks if user has been there before. If so, prints out
+     * room description. Otherwise, continues on and calls roomChoice().
+     * It then checks to see if its value is equivalent to getChoiceMax().
+     * If so, calls voidInteractionChoice(). Otherwise, continues on and
+     * returns roomChoice().
+     **/
     public int enter() {
         if (!beenHereBefore) {
             System.out.println(description);
             beenHereBefore = true;
         }
-    
+
         int choice = 0;
         while (true) {
             choice = roomChoice();
-    
-            if (choice == getChoiceMax()) { //if user chooses last option on prompted list (one that offers user interaction)
+
+            if (choice == getChoiceMax()) { // if user chooses last option on prompted list (one that offers user
+                                            // interaction)
                 voidInteractionChoice(); // lets user visit iteractive object in room
                 continue; // Goes back to top and prompt again
             }
-    
+
             return choice; // Leave the room and return the user's room choice
         }
     }
-    
-    
-    
-    
-    // all rooms (except woods) will have there own version of roomChoice
-    public abstract int roomChoice();
-    
 
-    // some rooms may have voidInteractionChoice
+    /**
+     * Abstract method that returns the int value of the room
+     * the user selects. To be implemented in all subclasses.
+     * 
+     * @return int value of user's room selection
+     **/
+    public abstract int roomChoice();
+
+    /**
+     * Abstract method that implements an interaction within
+     * each room. Used to give user clues or items.
+     **/
     public abstract void voidInteractionChoice();
 
-    // all rooms have a max amount of choices to select within roomChoice()
-    // and only the last option will be capable of asking user to view interaction object
+    /**
+     * Method used to get the maximum choice the user can choose within
+     * roomChoice(), which will be the only option introducing an
+     * interaction within the room
+     * 
+     * @return maximum choice
+     **/
     public abstract int getChoiceMax();
 }

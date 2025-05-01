@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 /**
  * Class: CrawlSpaceEscape
+ * Course: CSE201
  * Group: C
- * Version: 1.1
- * Course: CSE201 E
- * Written: April 29, 2025
+ * Version 2.0
+ * Last Updated: 4/30
  * 
- * Purpose: This class allows the player to navigate a crawl space by making
+ * This class allows the player to navigate a crawl space by making
  * correct directional choices. If the user chooses wrong, they must restart.
+ * 
+ * @author brunsaj2, levinee7
+ * 
  */
 public class CrawlSpaceEscape extends Outside {
     private Inventory inventory;
@@ -17,6 +20,7 @@ public class CrawlSpaceEscape extends Outside {
 
     /**
      * Constructor: initializes CrawlSpaceEscape
+     * 
      * @param inventory initializes user inventory
      **/
     public CrawlSpaceEscape(Inventory inventory) {
@@ -24,9 +28,9 @@ public class CrawlSpaceEscape extends Outside {
     }
 
     /**
-     * Method used to enter the crawlspace, calling chooseDirection() and 
+     * Method used to enter the crawlspace, calling chooseDirection() and
      * escapeCrawlSpace() in order for user to make their way through it,
-     * eventually reaching the end.
+     * eventually reaching the end
      **/
     @Override
     public void enter() {
@@ -59,9 +63,10 @@ public class CrawlSpaceEscape extends Outside {
 
     /**
      * Method used to handle navigation through crawlspace by presenting
-     * user with different directions to take. If user chooses invalid 
-     * option, they're prompted to choose again.
-     * @return string representation of direction user chooses.
+     * user with different directions to take. If user chooses invalid
+     * numeric option, they're prompted to choose again.
+     * 
+     * @return string representation of direction user chooses
      **/
     private String getUserDirection() {
         int choice = 0;
@@ -93,12 +98,12 @@ public class CrawlSpaceEscape extends Outside {
     }
 
     /**
-     * Method for when user reaches the end of crawlspace, narrating the 
-     * end of game and exits game.
+     * Method for when user reaches the end of crawlspace, narrating the
+     * end of game and then exits game
      **/
     private void escapeCrawlSpace() {
         System.out.println("You finally reach a hatch. This must be the end... " +
-                " You push it open and feel a rush of cold air against your face...");
+                "You push it open and feel a rush of cold air against your face.");
         keyPress();
         System.out.println("You tremble to your knees as the light of day shrinks" +
                 " your pupils and droplets of rain patter your skin.\nStumbling out the dark," +
@@ -106,6 +111,6 @@ public class CrawlSpaceEscape extends Outside {
                 " and finally scurry away, forever changed by the haunting encounter.");
         System.out.println("Congratulations! You escaped the haunted house!");
         keyPress();
-        System.exit(0); // Ends game
+        System.exit(0);
     }
 }
