@@ -10,7 +10,7 @@
  * Upon opening the fridge, the user recieves a crowbar used for
  * future interactions.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class Kitchen extends Room {

@@ -7,6 +7,8 @@
  *
  * Purpose: This class contains the dialogue flow for the start of the game.
  * The player moves through the woods and eventually reaches the haunted house.
+ * 
+ * @author brunsaj2, levinee7, hauptpm
  */
 public class Woods extends Outside {
 

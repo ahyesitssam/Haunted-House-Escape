@@ -10,7 +10,7 @@ import java.util.Scanner;
  * This class allows the player to navigate a crawl space by making
  * correct directional choices. If the user chooses wrong, they must restart.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class CrawlSpaceEscape extends Outside {

@@ -8,7 +8,7 @@
  * This class allows the user to execute game play by initializing
  * all rooms and spaces within the game
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class Main {

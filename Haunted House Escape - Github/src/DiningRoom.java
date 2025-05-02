@@ -9,7 +9,7 @@
  * It includes a painting that displays a code to the user,
  * in which they can utilize later in the game.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class DiningRoom extends Room {

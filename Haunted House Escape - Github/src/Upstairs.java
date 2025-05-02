@@ -8,7 +8,7 @@
  * This class serves as the second floor of the house. It acts as a checkpoint
  * to allow easy traveral of the user through the upper floor.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class Upstairs extends Room {

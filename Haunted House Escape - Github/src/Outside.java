@@ -11,7 +11,7 @@ import java.util.Scanner;
  * parent class, allowing subclasses to only inherit keyPress() and
  * enter() methods.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public abstract class Outside {
