@@ -5,8 +5,11 @@
  * Course: CSE201 E
  * Last Updated: March 6, 2025
  *
- * Purpose: This class contains the dialogue flow for the start of the game.
+ * This class contains the dialogue flow for the start of the game.
  * The player moves through the woods and eventually reaches the haunted house.
+ * 
+ * @author brunsaj2, levinee7
+ *
  */
 public class Woods extends Outside {
 
@@ -39,7 +42,7 @@ public class Woods extends Outside {
                         "until you finally see a hint of light flickering in the distance.");
         keyPress();
 
-        System.out.println("You stumble over in that direction, and eventually find yourself at the doorstep of a huge,"
+        System.out.println("You stumble over in that direction, and eventually find yourself at the doorstep of a huge, "
                 +
                 "yet unsettling-looking house. You have no other option, so you knock on the door in search of help.");
         keyPress();

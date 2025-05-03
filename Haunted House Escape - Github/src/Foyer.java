@@ -19,7 +19,7 @@ public class Foyer extends Room {
 	 **/
 	public Foyer(Inventory inventory) {
 		super(inventory);
-		this.description = "Now locked inside the errie house, you look around. " +
+		this.description = "Now locked inside the eerie house, you look around. " +
 				"Maybe there's a way you can get out of here... You notice four places you can go.";
 	}
 

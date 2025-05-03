@@ -32,7 +32,7 @@ public class DiningRoom extends Room {
     public int roomChoice() {
         int choice = 0;
         while (choice <= 0 || choice > 5) {
-            System.out.println("-> What will you do?");
+            System.out.println("-> Where will you go?");
             System.out.println("1. Living room");
             System.out.println("2. Master bedroom");
             System.out.println("3. Dining room");
