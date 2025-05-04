@@ -8,12 +8,8 @@
  * This class contains the dialogue flow for the start of the game.
  * The player moves through the woods and eventually reaches the haunted house.
  * 
-<<<<<<< HEAD
- * @author brunsaj2, levinee7
- *
-=======
  * @author brunsaj2, levinee7, hauptpm
->>>>>>> 74818111abf0033c92cda1d0daf17d71f540798a
+ *
  */
 public class Woods extends Outside {
 
@@ -30,18 +26,18 @@ public class Woods extends Outside {
         System.out.println(description);
         keyPress();
 
-        System.out.println("Your first thought is how did I get here? Trying to think back to the day before, " +
+        System.out.println("Your first thought is 'how did I get here?' Trying to think back to the day before, " +
                 "your mind seems blank, but you suddenly notice the bitter taste of alcohol in your mouth, and recall having "
                 +
                 "gone out drinking yesterday... maybe a little too much.");
         keyPress();
 
         System.out.println("You decide to pull your phone out to see where you are, but to no avail, it's dead." +
-                "Stress rushes over you, and you're now overcome by the thought of how do I get myself out of this situation?");
+                " Stress rushes over you, and you're now overcome by the thought of 'how do I get myself out of this situation?'");
         keyPress();
 
         System.out.println(
-                "You decide to start walking aimlessly, overwhelmed with anger at how you ended up in this situation… "
+                "You decide to start walking aimlessly, overwhelmed with anger at how you ended up in this situation... "
                         +
                         "until you finally see a hint of light flickering in the distance.");
         keyPress();

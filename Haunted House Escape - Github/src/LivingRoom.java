@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Class: Kitchen
  * Course: CSE201
@@ -5,22 +7,13 @@
  * Version 2.0
  * Last Updated: 4/30
  * 
- * This class serves as the living room of the house. It includes a 
+ * This class serves as the living room of the house. It includes a
  * bookcase in which the user can take books from and observe, giving
  * them a code.
  * 
  * @author brunsaj2, levinee7, hauptpm
  * 
  */
-
-/*
- * ALECS UPDATES
- *  1) Made global ArrayLists to house option list and book description list
- *  2) updated logic in switch case to use arraylists
- *  3) moved switch case to seperate method for single uses respondibility or whatever
- */
-import java.util.ArrayList;
-
 public class LivingRoom extends Room {
 
 	private static ArrayList<String> optionList = new ArrayList<>();
@@ -47,7 +40,7 @@ public class LivingRoom extends Room {
 	public int roomChoice() {
 		int choice = 0;
 		while (choice <= 0 || choice > 5) {
-            System.out.println("-> Where will you go?");
+			System.out.println("-> Where will you go?");
 			System.out.println("1. Living room");
 			System.out.println("2. Master bedroom");
 			System.out.println("3. Dining room");
@@ -123,7 +116,7 @@ public class LivingRoom extends Room {
 				bookSelected(5);
 				break;
 			case 6:
-				System.out.println(bookDescList.get(5));
+				System.out.println(bookDescList.get(6));
 				bookDescList.clear(); // resets the lists for future visits back
 				optionList.clear();
 				return true;

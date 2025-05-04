@@ -35,7 +35,7 @@ public class CrawlSpaceEscape extends Outside {
     @Override
     public void enter() {
         System.out.println("You squeeze into the narrow path and make your way... until you find" +
-                " a series of three tunnles branching off of your route.");
+                " a series of three tunnels branching off of your route.");
         keyPress();
         chooseDirection();
         escapeCrawlSpace();
