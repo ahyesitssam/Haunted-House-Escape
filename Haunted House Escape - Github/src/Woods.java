@@ -8,8 +8,12 @@
  * This class contains the dialogue flow for the start of the game.
  * The player moves through the woods and eventually reaches the haunted house.
  * 
+<<<<<<< HEAD
  * @author brunsaj2, levinee7
  *
+=======
+ * @author brunsaj2, levinee7, hauptpm
+>>>>>>> 74818111abf0033c92cda1d0daf17d71f540798a
  */
 public class Woods extends Outside {
 

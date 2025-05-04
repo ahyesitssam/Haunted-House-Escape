@@ -9,7 +9,7 @@
  * bookcase in which the user can take books from and observe, giving
  * them a code.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 

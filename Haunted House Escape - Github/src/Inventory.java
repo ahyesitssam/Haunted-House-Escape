@@ -13,7 +13,7 @@ import java.util.Set;
  * It includes different methods to be able to look for and add different items
  * to the inventory.
  * 
- * @author brunsaj2, levinee7
+ * @author brunsaj2, levinee7, hauptpm
  * 
  */
 public class Inventory {
