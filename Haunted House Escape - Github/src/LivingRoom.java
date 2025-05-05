@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * bookcase in which the user can take books from and observe, giving
  * them a code.
  * 
- * @author brunsaj2, levinee7, hauptpm
+ * @author brunsaj2, levinee7, hauptpm, bryantsp
  * 
  */
 public class LivingRoom extends Room {
@@ -67,7 +67,7 @@ public class LivingRoom extends Room {
 		System.out.print("*You're standing in front of the bookshelf, piled with books that look like"
 				+ "they date back many centuries.*\nMaybe I can look through some of the books?");
 		while (!exit) {
-			System.out.println("-> What book will you view?");
+			System.out.println("\n-> What book will you view?");
 
 			for (int i = 0; i < optionList.size(); i++) {
 				if (optionList.get(i) != null) {

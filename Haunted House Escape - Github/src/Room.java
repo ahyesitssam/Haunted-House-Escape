@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Abstract parent class of the rooms within the house, initializing
  * methods to be used within each of the rooms.
  * 
- * @author brunsaj2, levinee7, hauptpm
+ * @author brunsaj2, levinee7, hauptpm, bryantsp
  * 
  */
 public abstract class Room {

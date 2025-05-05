@@ -10,7 +10,7 @@
  * Upon opening the wardrobe, the user recieves a small golden key used for
  * future interactions.
  * 
- * @author brunsaj2, levinee7, hauptpm
+ * @author brunsaj2, levinee7, hauptpm, bryantsp
  * 
  */
 public class MasterBedroom extends Room {

@@ -9,7 +9,7 @@
  * acting as an escape route for the player to finally exit
  * the game.
  * 
- * @author brunsaj2, levinee7, hauptpm
+ * @author brunsaj2, levinee7, hauptpm, bryantsp
  * 
  */
 public class Office extends Room {

@@ -8,7 +8,7 @@
  * This class serves as the foyer of the house. It acts as a checkpoint
  * to allow easy traveral of the user through the first floor of the house.
  * 
- * @author brunsaj2, levinee7, hauptpm
+ * @author brunsaj2, levinee7, hauptpm, bryantsp
  * 
  */
 public class Foyer extends Room {
