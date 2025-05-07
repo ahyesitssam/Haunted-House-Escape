@@ -18,6 +18,12 @@ public class Upstairs extends Room {
         this.description = "A long hallway introduces a new set of rooms.";
     }
 
+    /**
+     * Method that returns the int value of the room
+     * the user selects. To be implemented in all subclasses.
+     * 
+     * @return int value of user's room selection
+     **/
     @Override
     public int roomChoice() {
         int choice = 0;
@@ -32,11 +38,22 @@ public class Upstairs extends Room {
         return choice;
     }
 
+    /**
+	 * Method unused since no user interaction in room, but fulfills
+	 * abstract Room requirements
+	 **/
     @Override
     public void voidInteractionChoice() {
 
     }
 
+    /**
+	 * Method used to get the maximum choice the user can choose within
+	 * roomChoice(), which goes out of bounds in this case as there's no
+	 * user interaction in this room
+	 * 
+	 * @return maximum choice: 4
+	 **/
     @Override
     public int getChoiceMax() {
         return 4; // choiceMax goes out of bounds (cannot be returned from roomChoice)

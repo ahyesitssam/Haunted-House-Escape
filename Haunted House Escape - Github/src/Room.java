@@ -70,6 +70,8 @@ public abstract class Room {
      * It then checks to see if its value is equivalent to getChoiceMax().
      * If so, calls voidInteractionChoice(). Otherwise, continues on and
      * returns roomChoice().
+     * 
+     * @return int roomChoice()
      **/
     public int enter() {
         if (!beenHereBefore) {
